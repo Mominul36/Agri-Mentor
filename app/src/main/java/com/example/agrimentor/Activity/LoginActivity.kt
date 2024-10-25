@@ -63,7 +63,7 @@ class LoginActivity : AppCompatActivity() {
                     binding.password.error = errorMessagePassword
                     errorMessagePassword=""
                 }
-
+ //
             }else{
                 login(email,password)
 
