@@ -2,84 +2,42 @@ package com.example.agrimentor
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.MenuItem
-import androidx.appcompat.app.ActionBarDrawerToggle
+import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
-import androidx.core.view.GravityCompat
-import androidx.drawerlayout.widget.DrawerLayout
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import com.example.agrimentor.Activity.LoginActivity
+import com.example.agrimentor.databinding.ActivityLoginBinding
 import com.example.agrimentor.databinding.ActivityMainBinding
-import com.google.android.material.navigation.NavigationView
+import com.example.agrimentor.model.UserModel
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
-
-    private lateinit var drawerLayout: DrawerLayout
-    private lateinit var auth: FirebaseAuth
-    private lateinit var binding: ActivityMainBinding
-
+class MainActivity : AppCompatActivity() {
+    lateinit var  binding: ActivityMainBinding
+    lateinit var auth : FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Set up toolbar on the right
-        val toolbar: Toolbar = findViewById(R.id.toolbar)
-        setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayShowTitleEnabled(false) // Remove title
-
-        // Initialize Firebase auth
         auth = FirebaseAuth.getInstance()
 
-        // Initialize DrawerLayout
-        drawerLayout = binding.drawerLayout
+        var currentUser = auth.currentUser
 
-        // Set up ActionBarDrawerToggle to handle opening/closing the drawer
-        val toggle = ActionBarDrawerToggle(
-            this, drawerLayout, toolbar,
-            R.string.navigation_drawer_open, R.string.navigation_drawer_close
-        )
-        drawerLayout.addDrawerListener(toggle)
-        toggle.syncState()
+        binding.txt.text = "Hello "+currentUser!!.email
 
-        // Setup navigation view and listener
-        val navigationView: NavigationView = binding.navView
-        navigationView.setNavigationItemSelectedListener(this)
-    }
-
-    override fun onBackPressed() {
-        // Close drawer if open
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout.closeDrawer(GravityCompat.START)
-        } else {
-            super.onBackPressed()
+        binding.signout.setOnClickListener{
+            auth.signOut()
+            startActivity(Intent(this,LoginActivity::class.java))
+            finish()
         }
-    }
 
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.nav_home -> {
-                // Handle Home click
-               // supportFragmentManager.beginTransaction().replace(R.id.content_frame, HomeFragment()).commit()
-            }
-            R.id.nav_profile -> {
-                // Handle Profile click
-                //supportFragmentManager.beginTransaction().replace(R.id.content_frame, ProfileFragment()).commit()
-            }
-            R.id.nav_settings -> {
-                // Handle Settings click
-                //supportFragmentManager.beginTransaction().replace(R.id.content_frame, SettingsFragment()).commit()
-            }
-            R.id.nav_logout -> {
-                // Handle Logout click
-                auth.signOut()
-                startActivity(Intent(this, LoginActivity::class.java))
-                finish()
-            }
-        }
-        // Close drawer after item is selected
-        drawerLayout.closeDrawer(GravityCompat.START)
-        return true
+
+
+
     }
 }
