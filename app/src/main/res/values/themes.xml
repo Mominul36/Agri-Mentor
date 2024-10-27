@@ -2,7 +2,10 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.AgriMentor" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+         <item name="colorPrimary">@color/base_color</item>
+        <item name="colorPrimaryDark">@color/colorprimarydark</item>
+        <item name="colorAccent">@color/base_color</item>
+
     </style>
 
     <style name="Theme.AgriMentor" parent="Base.Theme.AgriMentor" />
