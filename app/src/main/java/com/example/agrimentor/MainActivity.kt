@@ -18,6 +18,7 @@ import androidx.fragment.app.FragmentTransaction
 import com.example.agrimentor.Activity.LoginActivity
 import com.example.agrimentor.Activity.MyProductActivity
 import com.example.agrimentor.Fragments.HomeFragment
+import com.example.agrimentor.Fragments.MarketFragment
 import com.example.agrimentor.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
@@ -82,10 +83,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 // Set click listeners for each navigation item
         navHome.setOnClickListener {
             setNavigationItemColor(navHome)
+            setFragment(HomeFragment())
         }
 
         navMarket.setOnClickListener {
             setNavigationItemColor(navMarket)
+            setFragment(MarketFragment())
         }
 
         navCropCare.setOnClickListener {
