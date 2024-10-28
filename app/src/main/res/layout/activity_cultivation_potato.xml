@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.CultivationPotatoActivity"
+    android:orientation="vertical"
+    >
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/tool"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        >
+
+        <!-- Toolbar -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/home_toolbar_background"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+            <ImageView
+                android:id="@+id/backbutton"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/left_arrow"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="30dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Crop"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="35dp"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="30dp"
+                android:textColor="@color/white"
+                />
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tool"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="10dp"
+            >
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/titleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Potato"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="20dp"
+                />
+
+            <!-- Main Image -->
+            <ImageView
+                android:id="@+id/mainImage"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/potato"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="8dp" />
+
+
+
+            <!-- Duration -->
+            <TextView
+                android:id="@+id/durationTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Duration"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/durationText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nov - December"
+                android:textSize="14sp"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Seed Rate -->
+            <TextView
+                android:id="@+id/seedRateTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Seed Rate"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/seedRateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="16-20 kg/hch"
+                android:textSize="14sp"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Climate Suitability -->
+            <TextView
+                android:id="@+id/climateTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Climate Suitability"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/climateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cool climate with moderate rainfall"
+                android:textSize="14sp"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Soil Requirements -->
+            <TextView
+                android:id="@+id/soilTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Soil Requirements"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/soilText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Loamy, well-drained soil with a pH of 5.5-6.5"
+                android:textSize="14sp"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Growth Stages -->
+            <TextView
+                android:id="@+id/growthStagesTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Growth Stages"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/growthStagesText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1. Germination\n2. Vegetative Growth\n3. Tuber Formation\n4. Maturation"
+                android:textSize="14sp"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Seed Treatment -->
+            <TextView
+                android:id="@+id/seedTreatmentTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Seed Treatment"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/seedTreatmentText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dissolve 375g urea in 10 liters of water and put 10 kg seed into the container. Stir seeds by hand to treat them uniformly."
+                android:textSize="14sp"
+                android:textColor="@android:color/black"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Seed Preparation -->
+            <TextView
+                android:id="@+id/seedPreparationTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Seed Preparation"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/seedPreparationText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dissolve 375g urea in 10 liters of water and put 10 kg seed into the container. Stir seeds by hand and allow them to dry before planting."
+                android:textSize="14sp"
+                android:textColor="@android:color/black"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginBottom="12dp" />
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+
+
+
+
+
+</RelativeLayout>

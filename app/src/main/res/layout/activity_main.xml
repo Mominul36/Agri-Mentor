@@ -77,7 +77,7 @@
                      <TextView
                          android:layout_width="wrap_content"
                          android:layout_height="wrap_content"
-                         android:text="Md Mominul Islam"
+                         android:text="Md Hafizur Rahman"
                          android:textColor="@color/white"
                          android:textStyle="bold"
                          android:textSize="18sp"
